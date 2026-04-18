@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { PlusCircle, Inbox, WashingMachine, Truck, LayoutDashboard, List } from "lucide-react";
 
@@ -19,9 +20,13 @@ export default function Sidebar() {
   return (
     <div className="flex flex-col md:flex-col w-full md:w-64 h-auto md:h-screen bg-neutral-900 border-b md:border-b-0 md:border-r border-neutral-800 text-white p-2 md:p-4 print:hidden flex-none">
       <div className="md:mb-8 px-2 py-2 md:py-0 flex items-center justify-center md:justify-start space-x-3">
-        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-sm md:text-base">
-          L
-        </div>
+        <Image
+          src="/logo.png"
+          alt="WashFlow Logo"
+          width={32}
+          height={32}
+          className="rounded-full flex-shrink-0"
+        />
         <h1 className="text-lg md:text-xl font-bold tracking-wide hidden md:block">WashFlow</h1>
       </div>
       
