@@ -130,7 +130,7 @@ export default function CreateOrderPage() {
 
           <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
             <h2 className="text-xl font-semibold mb-4 text-white">Add Garments</h2>
-            <div className="flex gap-4 items-end">
+            <div className="flex flex-col sm:flex-row gap-4 sm:items-end">
               <div className="flex-1">
                 <label className="block text-sm font-medium text-neutral-400 mb-1">Type</label>
                 <select
@@ -143,7 +143,7 @@ export default function CreateOrderPage() {
                   ))}
                 </select>
               </div>
-              <div className="w-24">
+              <div className="w-full sm:w-24">
                 <label className="block text-sm font-medium text-neutral-400 mb-1">Qty</label>
                 <input
                   type="number"
@@ -156,7 +156,7 @@ export default function CreateOrderPage() {
               <button
                 type="button"
                 onClick={handleAddItem}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 mt-2 sm:mt-0"
               >
                 <Plus className="w-5 h-5" />
                 Add

@@ -36,7 +36,7 @@ export default function OrderCard({ order, actionText, onAction, secondaryAction
 
   return (
     <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 transition-all hover:border-neutral-700">
-      <div className="flex justify-between items-start mb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-4 sm:gap-0">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <Package className="w-5 h-5 text-blue-500" />
@@ -46,7 +46,7 @@ export default function OrderCard({ order, actionText, onAction, secondaryAction
             {new Date(order.createdAt).toLocaleDateString()} at {new Date(order.createdAt).toLocaleTimeString()}
           </p>
         </div>
-        <div className="flex flex-col gap-2 items-end">
+        <div className="flex flex-wrap sm:flex-col gap-2 items-start sm:items-end w-full sm:w-auto">
           <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusColors[order.status]}`}>
             {order.status}
           </span>
@@ -56,7 +56,7 @@ export default function OrderCard({ order, actionText, onAction, secondaryAction
         </div>
       </div>
 
-      <div className="flex gap-6 mb-6 pb-4 border-b border-neutral-800">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 mb-6 pb-4 border-b border-neutral-800">
         <div className="flex items-center gap-2 text-neutral-300">
           <User className="w-4 h-4 text-neutral-500" />
           <span>{order.customerName}</span>
@@ -79,19 +79,19 @@ export default function OrderCard({ order, actionText, onAction, secondaryAction
         </div>
       </div>
 
-      <div className="flex items-center justify-between mt-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-6 gap-4 sm:gap-0">
         <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Total: ₹{order.total}
         </div>
         
-        <div className="flex gap-3">
+        <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-3">
           {error && <span className="text-red-400 text-sm self-center">{error}</span>}
           
           {secondaryActionText && onSecondaryAction && (
             <button
               onClick={() => onSecondaryAction(order.orderId)}
               disabled={loading}
-              className="px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg font-medium transition-colors text-sm"
+              className="w-full sm:w-auto px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg font-medium transition-colors text-sm"
             >
               {secondaryActionText}
             </button>
@@ -101,7 +101,7 @@ export default function OrderCard({ order, actionText, onAction, secondaryAction
             <button
               onClick={handleAction}
               disabled={loading}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20 text-sm"
+              className="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20 text-sm"
             >
               {loading ? "Processing..." : (
                 <>
