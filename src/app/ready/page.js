@@ -2,6 +2,8 @@ import { getOrdersByStatus, updateOrderStatus, updateOrderPayment } from "@/app/
 import OrderCard from "@/components/OrderCard";
 import { Truck } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function ReadyOrdersPage() {
   const result = await getOrdersByStatus("READY");
   const orders = result.success ? result.orders : [];

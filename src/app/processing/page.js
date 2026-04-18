@@ -2,6 +2,8 @@ import { getOrdersByStatus, updateOrderStatus } from "@/app/actions/orderActions
 import OrderCard from "@/components/OrderCard";
 import { WashingMachine } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProcessingOrdersPage() {
   const result = await getOrdersByStatus("PROCESSING");
   const orders = result.success ? result.orders : [];

@@ -2,6 +2,8 @@ import { getOrdersByStatus, updateOrderStatus } from "@/app/actions/orderActions
 import OrderCard from "@/components/OrderCard";
 import { Inbox } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function ReceivedOrdersPage() {
   const result = await getOrdersByStatus("RECEIVED");
   const orders = result.success ? result.orders : [];
